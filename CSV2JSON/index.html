@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Converta arquivos e textos CSV para o formato JSON gratuitamente."
+    >
+
+    <title>CSV2JSON | CSV to JSON Converter</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+    <header class="header">
+        <a class="logo" href="#">CSV<span>2</span>JSON</a>
+        <p>Transforme seus dados CSV em JSON rapidamente.</p>
+    </header>
+
+    <main class="container">
+        <section class="panel">
+            <div class="section-heading">
+                <h1>CSV to JSON Converter</h1>
+                <p>Insira seus dados CSV ou carregue um arquivo.</p>
+            </div>
+
+            <label for="csv-input">Dados CSV</label>
+
+            <textarea
+                id="csv-input"
+                placeholder="name,age,city&#10;Lucas,25,São Paulo&#10;Ana,22,Rio de Janeiro"
+                spellcheck="false"
+            ></textarea>
+
+            <div class="file-area">
+                <label for="csv-file" class="file-label">
+                    <span aria-hidden="true">📁</span>
+                    Selecionar arquivo CSV
+                </label>
+
+                <input
+                    type="file"
+                    id="csv-file"
+                    accept=".csv,text/csv"
+                >
+
+                <span id="file-name">Nenhum arquivo selecionado</span>
+            </div>
+
+            <div class="options">
+                <div class="option">
+                    <label for="delimiter">Delimitador</label>
+
+                    <select id="delimiter">
+                        <option value=",">Vírgula (,)</option>
+                        <option value=";">Ponto e vírgula (;)</option>
+                        <option value="tab">Tabulação</option>
+                    </select>
+                </div>
+
+                <label class="checkbox-option">
+                    <input type="checkbox" id="header-row" checked>
+                    Primeira linha contém cabeçalhos
+                </label>
+            </div>
+
+            <button type="button" id="convert-button" class="primary-button">
+                Converter para JSON
+            </button>
+
+            <p id="status" class="status" role="status" aria-live="polite"></p>
+        </section>
+
+        <section class="panel output-panel">
+            <div class="output-heading">
+                <div>
+                    <h2>Resultado JSON</h2>
+                    <p id="result-info">Seu resultado aparecerá aqui.</p>
+                </div>
+
+                <div class="output-actions">
+                    <button type="button" id="copy-button" class="secondary-button">
+                        Copiar
+                    </button>
+
+                    <button type="button" id="download-button" class="secondary-button">
+                        Baixar JSON
+                    </button>
+                </div>
+            </div>
+
+            <pre id="json-output" aria-label="Resultado JSON"><code>[]</code></pre>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>
+            Desenvolvido por
+            <a
+                href="https://github.com/Taunt-byte"
+                target="_blank"
+                rel="noopener noreferrer"
+            >Lucas Neves</a>
+        </p>
+    </footer>
+</body>
+</html>

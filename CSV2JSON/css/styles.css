@@ -1,0 +1,300 @@
+/* Reset e configurações gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #e5e7eb;
+    background: #0f172a;
+    font-synthesis: none;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 32px 20px;
+}
+
+/* Cabeçalho */
+.header {
+    text-align: center;
+    margin-bottom: 36px;
+}
+
+.logo {
+    display: inline-block;
+    margin-bottom: 12px;
+    color: #f8fafc;
+    font-size: 1.8rem;
+    font-weight: 800;
+    text-decoration: none;
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: #38bdf8;
+}
+
+.header p,
+.section-heading p,
+.output-heading p {
+    color: #94a3b8;
+    line-height: 1.6;
+}
+
+/* Layout principal */
+.container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    align-items: start;
+}
+
+.panel {
+    min-width: 0;
+    padding: 24px;
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgb(0 0 0 / 15%);
+}
+
+.section-heading {
+    margin-bottom: 24px;
+}
+
+.section-heading h1,
+.output-heading h2 {
+    margin-bottom: 8px;
+    color: #f8fafc;
+    font-size: 1.35rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* Entrada CSV */
+textarea {
+    display: block;
+    width: 100%;
+    min-height: 250px;
+    padding: 14px;
+    resize: vertical;
+    border: 1px solid #475569;
+    border-radius: 10px;
+    outline: none;
+    background: #0f172a;
+    color: #e2e8f0;
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+textarea:focus,
+select:focus {
+    border-color: #38bdf8;
+    outline: 2px solid rgb(56 189 248 / 15%);
+}
+
+/* Upload de arquivo */
+.file-area {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    margin: 16px 0 22px;
+}
+
+.file-label {
+    margin: 0;
+    padding: 10px 12px;
+    border: 1px solid #475569;
+    border-radius: 8px;
+    color: #e2e8f0;
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+
+.file-label:hover {
+    background: #334155;
+}
+
+#csv-file {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+}
+
+#csv-file:focus-visible + #file-name {
+    outline: 2px solid #38bdf8;
+}
+
+#file-name {
+    color: #94a3b8;
+    font-size: 0.8rem;
+    overflow-wrap: anywhere;
+}
+
+/* Opções */
+.options {
+    display: grid;
+    gap: 18px;
+    margin-bottom: 22px;
+}
+
+.option select {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #475569;
+    border-radius: 8px;
+    background: #0f172a;
+    color: #f8fafc;
+    font-size: 0.9rem;
+}
+
+.checkbox-option {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin: 0;
+    color: #cbd5e1;
+    font-weight: 400;
+}
+
+.checkbox-option input {
+    accent-color: #38bdf8;
+}
+
+/* Botões */
+button {
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+button:focus-visible,
+.file-label:focus-visible {
+    outline: 2px solid #7dd3fc;
+    outline-offset: 3px;
+}
+
+.primary-button {
+    width: 100%;
+    padding: 14px;
+    background: #0284c7;
+    color: white;
+    font-size: 0.95rem;
+}
+
+.primary-button:hover {
+    background: #0369a1;
+}
+
+.secondary-button {
+    padding: 10px 12px;
+    background: #334155;
+    color: #f8fafc;
+    font-size: 0.8rem;
+}
+
+.secondary-button:hover {
+    background: #475569;
+}
+
+/* Mensagens */
+.status {
+    min-height: 20px;
+    margin-top: 12px;
+    color: #7dd3fc;
+    font-size: 0.85rem;
+    overflow-wrap: anywhere;
+}
+
+/* Resultado */
+.output-heading {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 18px;
+}
+
+.output-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+#json-output {
+    min-height: 300px;
+    max-height: 500px;
+    overflow: auto;
+    padding: 16px;
+    border: 1px solid #334155;
+    border-radius: 10px;
+    background: #0b1220;
+    color: #a7f3d0;
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 0.85rem;
+    line-height: 1.7;
+    white-space: pre;
+}
+
+/* Rodapé */
+.footer {
+    margin-top: auto;
+    padding-top: 40px;
+    text-align: center;
+    color: #94a3b8;
+    font-size: 0.9rem;
+}
+
+.footer a {
+    color: #38bdf8;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsividade */
+@media (max-width: 760px) {
+    body {
+        padding: 24px 14px;
+    }
+
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .panel {
+        padding: 18px;
+    }
+
+    .output-heading {
+        gap: 12px;
+    }
+
+    #json-output {
+        min-height: 220px;
+    }
+}
