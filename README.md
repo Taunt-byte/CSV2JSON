@@ -47,7 +47,7 @@ You only need a modern web browser to run this application.
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/YOUR-USERNAME/CSV2JSON.git
+   git clone https://github.com/Taunt-byte/CSV2JSON.git
    ```
 
 2. Navigate to the project directory:
